@@ -1,0 +1,21 @@
+{
+  "name": "estate-hub",
+  "version": "0.1.0",
+  "description": "출퇴근 기반 오피스텔 추천 AI 에이전트",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Build complete'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "real-estate",
+    "officetel",
+    "commute",
+    "serverless"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}

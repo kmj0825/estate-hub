@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="출퇴근 시간 기반으로 최적의 오피스텔을 찾아드립니다">
+    <title>Estate-Hub - 출퇴근 맞춤 오피스텔 찾기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🏢 Estate-Hub</h1>
+            <p>출퇴근 시간 기반 오피스텔 찾기</p>
+        </header>
+
+        <!-- Search Card -->
+        <div class="search-card">
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="company">🏢 회사 위치</label>
+                    <select id="company" name="company_location" required>
+                        <option value="">선택하세요</option>
+                        <option value="강남역">강남역</option>
+                        <option value="판교">판교</option>
+                        <option value="정자역">정자역</option>
+                        <option value="삼성역">삼성역</option>
+                        <option value="선릉역">선릉역</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="commute_time">⏱️ 최대 출퇴근 시간 (분)</label>
+                        <input type="number" id="commute_time" name="max_commute_minutes" value="30" min="10" max="120">
+                    </div>
+                    <div class="form-group">
+                        <label for="room_type">🏠 방 타입</label>
+                        <select id="room_type" name="room_type">
+                            <option value="">전체</option>
+                            <option value="원룸">원룸</option>
+                            <option value="투룸">투룸</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="deposit">💰 최대 보증금 (만원)</label>
+                        <input type="number" id="deposit" name="budget_deposit_max" placeholder="예: 1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="monthly">💸 최대 월세 (만원)</label>
+                        <input type="number" id="monthly" name="budget_monthly_max" placeholder="예: 60">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-search">🔍 오피스텔 찾기</button>
+            </form>
+        </div>
+
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>검색 중...</p>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results">
+            <div class="result-header">
+                <h2>검색 결과</h2>
+                <p class="count" id="resultCount"></p>
+            </div>
+            <div id="resultList"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
